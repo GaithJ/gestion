@@ -1,0 +1,104 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Equipement :</h2>
+    </div>
+    <form>
+      <div class="formulair">
+        <div class="f1">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >NInv Equipement  </label>
+        <input type="number" [(ngModel)]="currentEquipement[0].NInv" name="nInvEquipement" class="form-control">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Famille Equipement </label>
+        <input type="text"[(ngModel)]= "currentEquipement[0].Famille" name="familleEquipement" class="form-control">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Nom Equipement </label>
+        <input type="texte" [(ngModel)]= "currentEquipement[0].Nom" name="nomEquipement" class="form-control">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Marque Equipement </label>
+        <input type="texte" [(ngModel)]= "currentEquipement[0].Marque" name="marqueEquipement" class="form-control">
+          </div>
+         <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label >Modele Equipement </label>
+            <input type="text"[(ngModel)]= "currentEquipement[0].Modele" name="modeleEquipement" class="form-control">
+         </div>
+        </div>
+        <div class="f2">
+
+        <div class="col-sm-4 col-md-4 col-lg-4" >   
+            <label >Nserie  Equipement </label>
+            <input type="number"[(ngModel)]= "currentEquipement[0].Nserie " name="nserie Equipement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >   
+            <label >Fournisseur  Equipement </label>
+            <input type="text"[(ngModel)]= "currentEquipement[0].Fournisseur " name="fournisseur Equipement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >   
+            <label >Mser  Equipement </label>
+            <input type="date"[(ngModel)]= "currentEquipement[0].Mser " name="mser Equipement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >   
+            <label >ModAcq  Equipement </label>
+            <input type="text"[(ngModel)]= "currentEquipement[0].ModAcq " name="modAcq Equipement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >   
+            <label >Origine Equipement </label>
+            <input type="text"[(ngModel)]= "currentEquipement[0].Origine " name="origine Equipement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <label>Categorie</label>
+          <select name="services" id="service-select">
+            <option value="">--Please choose an option--</option>
+            <option value="service radiothérapie">Service Radiothérapie</option>
+            <option value="service urgence ">Service Urgence</option>
+            <option value="service cardiologie ">Service Cardiologie </option>
+            <option value="service hématolgie ">Service Hématolgie </option>
+            <option value="service médecine dentaire ">Service médecine dentaire </option>
+            <option value="service médecine légale ">Service Médecine Légale</option>
+            <option value="service rhumatologie ">Service Rhumatologie </option>
+            <option value="service médecine du travail ">Service Médecine du travail </option>
+            <option value="service hygiéne ">Service Hygiéne </option>
+            <option value="service dermatologie ">Service Dermatologie </option>
+            <option value="service endocrinolgie ">Service Endocrinologie </option>
+            <option value="service carcinologie ">Service Carcinolgie </option>
+            <option value="service psychiatrie">Service Psychiatrie</option>
+            <option value="fluide médicaux ">Fluide Médicaux </option>
+            <option value="service pneumologie ">Service Pneumologie  </option>
+            <option value="service ophtalmologie ">Service Ophtalmologie  </option>
+            <option value="laboratoire hygiéne ">Laboratoire Hygiéne </option>
+            <option value="laboratoire biochimie  ">Laboratoire Biochimie </option>
+            <option value="laboratoire toxicologie  ">Laboratoire Toxicologie  </option>
+            <option value="laboratoire microbiologie  ">Laboratoire Microbiologie  </option>
+            <option value="laboratoire parasitlogie  ">Laboratoire Prasitologie </option>
+            <option value="service réanimation pédiatrie  ">Service Réanimation Pédiatrie</option>
+            <option value="laboratoire hématologie  ">Laboratoire Hématologie  </option>
+            <option value="laboratoire physiologie  ">Laboratoire physiologie  </option>
+            <option value="laboratoire immunologie ">Laboratoire Immunologie </option>
+            <option value="laboratoire cytogénitique ">Laboratoire Lytogénitique  </option>
+            <option value="laboratoire anatomie pathologique  ">Laboratoire Anatomie Pathologique   </option>
+            <option value="service radiologie ">Service Radiologie   </option>
+            <option value="service orl">Service ORL </option>
+            <option value="service réanimation médical ">Service Réanimation Médical  </option>
+            <option value="service médecine infectieuse   ">Service Médecine Infectieuse  </option>
+            <option value="pharmacie   ">Pharmacie   </option>
+            <option value="service anesthésie réanimation   ">Service Anesthésie Réanimation  </option>
+            <option value="service néonatoligie   ">Service Néonatologie </option>
+            <option value="service génycologie   ">Service Gynécologie   </option>
+            
+        </select>
+        </div>
+        <div class="mt-2">
+          <button type="submit" (click) = "updateequipement()" class="btn btn-success">Modifier</button>  
+        
+        </div>
+        
+      </div>
+    </div>
+        </form>
+      
+    </div>
+
+
