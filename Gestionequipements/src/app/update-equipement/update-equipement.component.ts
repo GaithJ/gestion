@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { equipement } from '../model/equipement';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EquipementService } from '../services/equipement.service';
+import { service } from '../model/service';
 
 @Component({
   selector: 'app-update-equipement',
@@ -13,7 +14,7 @@ export class UpdateEquipementComponent implements OnInit {
   currentEquipement!:equipement[] 
   id!: number
   equipement: any
-  
+  service!:service[]
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -31,7 +32,10 @@ export class UpdateEquipementComponent implements OnInit {
       Mser :new Date ,
       ModAcq : '' ,
       Origine : '' ,
-      idCat:0  }]
+      idCat:0 ,
+      service:''
+      
+    }]
       this.id=Number(this.activatedRoute.snapshot.paramMap.get('id'))
       
       console.log (this.id)
@@ -56,9 +60,21 @@ export class UpdateEquipementComponent implements OnInit {
         redirect(){
           this.router.navigate(['equipements']);
       }
+      getservice(){
+        this.equipementservice.getallser().subscribe((res)=>{this.service=res}
+            
+        )}
     
     }  
+    
+    
+    
+  
         
+
+// function getservice() {
+//   throw new Error('Function not implemented.');
+// }
       //  return this.equipementservice.updateequipement(this.currentEquipement ).subscribe(res=>{this.currentEquipement=res
       //  console.log(this.currentEquipement);
       //  this.equipementservice.updateequipement(this.currentEquipement);

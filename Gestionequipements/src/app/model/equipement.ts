@@ -1,5 +1,7 @@
 // import { Categorie } from "./categorie";
 
+import { service } from "./service";
+
 
 export class equipement {
 NInv : number  ;
@@ -12,7 +14,10 @@ Fournisseur : string ;
 Mser : Date ;
 ModAcq : string ;
 Origine: string ;
-idCat!:number   
+idCat!:number 
+service:string
+
+
   
    constructor(NInv: number  ,
     Famille: string ,
@@ -24,7 +29,8 @@ idCat!:number
     Mser: Date ,
     ModAcq : string ,
     Origine : string ,
-     idCat:number 
+     idCat:number ,
+     service:string
     ){
         this.NInv=NInv;
         this.Famille=Famille;
@@ -36,5 +42,8 @@ idCat!:number
         this.Mser=Mser
         this.ModAcq=ModAcq
         this.Origine=Origine
+        this.service=service 
+        
+
     }
 }

@@ -20,16 +20,39 @@ app.get("/mylist/:id", (req, res) => {
     res.send(result);
   });
 });
-app.get("/service", (req, res) => {
-  let id = req.params.id;
-  let qr = `select * from service  `;
-  db.query(qr, (err, result) => {
-    res.send(result);
-  });
+
+
+
+//
+app.get("/service", async(req, res) => {
+  // let idservice = req.params.id;
+    let qr = `select nomservice from service`;
+    // const requete =  db.query(qr, (err, result) => {
+    //   return result
+    // });
+    // res.send( await requete);
+
+    const getAllService = new Promise((resolve, reject)=>{
+      db.query(qr, (err, result) => {
+        if(err){
+          reject(err)
+        }
+        resolve(result)
+      })
+    })
+
+    res.send(await getAllService)
+   
 });
+
+
+
+
+
 app.post("/mylist", (req, res) => {
   console.log(req.body);
   let Famille = req.body.Famille;
+
   let Nom = req.body.Nom;
   let Marque = req.body.Marque;
   let Modele = req.body.Modele;
@@ -38,9 +61,10 @@ app.post("/mylist", (req, res) => {
   let Mser = req.body.Mser;
   let Modacq = req.body.Modacq;
   let Origine = req.body.Origine;
-  let qr = `INSERT INTO mylist ( Famille, Nom, Marque, Modele, Nserie, Fournisseur, Mser, Modacq, Origine) 
+  let service= req.body.service
+  let qr = `INSERT INTO mylist ( Famille, Nom, Marque, Modele, Nserie, Fournisseur, Mser, Modacq, Origine,service ) 
     VALUES ('${Famille}','${Nom}','${Marque}','${Modele}','${Nserie}',
-    '${Fournisseur}','${Mser}','${Modacq}','${Origine}')`;
+    '${Fournisseur}','${Mser}','${Modacq}','${Origine}','${service})`;
   db.query(qr, (err, result) => {
     res.send(result);
   });
@@ -60,6 +84,7 @@ app.put("/mylist/:NInv", (req, res) => {
   let Mser = req.body.Mser;
   let Modacq = req.body.Modacq;
   let Origine = req.body.Origine;
+  let service=req.body.service
   let qr = `UPDATE mylist SET  Famille='${Famille}',
                               Nom='${Nom}',
                               Marque='${Marque}',
@@ -68,7 +93,9 @@ app.put("/mylist/:NInv", (req, res) => {
                               Fournisseur='${Fournisseur}',
                               Mser='${Mser}',
                               Modacq='${Modacq}',
-                              Origine='${Origine}' WHERE NInv= ${NInv}`;
+                              Origine='${Origine}'
+                              service='${service}'
+                               WHERE NInv= ${NInv}`;
   const example = db.query(qr, (err, result) => {
     if(result){
       console.log(result);

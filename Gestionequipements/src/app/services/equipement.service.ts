@@ -24,7 +24,7 @@ export class EquipementService {
   equipements!: equipement[];
   equipement: any;
   // categories: Categorie[] = []
-  categorie: any
+  // categorie: any
 
 
   nomCat: string | undefined
@@ -40,6 +40,7 @@ export class EquipementService {
 
   getall(): Observable<equipement[]> {
     return this.http.get<equipement[]>(`${this.url}`)
+
   }
   getallser(): Observable<service[]> {
     return this.http.get<service[]>(`${this.url1}`)

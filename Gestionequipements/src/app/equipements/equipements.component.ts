@@ -22,6 +22,7 @@ export class EquipementsComponent implements OnInit {
   ngOnInit(): void {
    // throw new Error('Method not implemented.');
   this.liste()
+  
     
   }
   liste(){

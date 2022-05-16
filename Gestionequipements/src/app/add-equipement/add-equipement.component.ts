@@ -10,7 +10,7 @@ import { EquipementService } from '../services/equipement.service';
   styleUrls: ['./add-equipement.component.css']
 })
 export class AddEquipementComponent implements OnInit {
-  newEquipement = new equipement(0,'','','','',0,'',new Date,'','',0);
+  newEquipement = new equipement(0,'','','','',0,'',new Date,'','',0,'');
   message  : string | undefined;
   // categories : Categorie[] | undefined;
   newIdCat : any
@@ -18,12 +18,7 @@ export class AddEquipementComponent implements OnInit {
   equipements: equipement[] | undefined;
   
  service!:service[]
-  
  
-  
-
-  
-  
   constructor(private equipementservice: EquipementService) { }
   
 
@@ -41,8 +36,8 @@ export class AddEquipementComponent implements OnInit {
     
     }
     getservice(){
-      this.equipementservice.getallser().subscribe((res)=>{this.service=res}
-          
+      this.equipementservice.getallser().subscribe((res)=>{this.service=res
+          console.log(res)}
       )}
     
   

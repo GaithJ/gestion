@@ -49,9 +49,10 @@
             <input type="text"[(ngModel)]= "currentEquipement[0].Origine " name="origine Equipement" class="form-control">
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
-          <label>Categorie</label>
-          <select name="services" id="service-select">
-            <option value="">--Please choose an option--</option>
+          <label>service</label>
+          <select name="nomservice" id="idservice">
+            <option *ngFor="let a of service" [ngValue]="a.idservice" >{{a.nomservice }}</option>
+            <!-- <option value="">--Please choose an option--</option>
             <option value="service radiothérapie">Service Radiothérapie</option>
             <option value="service urgence ">Service Urgence</option>
             <option value="service cardiologie ">Service Cardiologie </option>
@@ -87,7 +88,7 @@
             <option value="service anesthésie réanimation   ">Service Anesthésie Réanimation  </option>
             <option value="service néonatoligie   ">Service Néonatologie </option>
             <option value="service génycologie   ">Service Gynécologie   </option>
-            
+             -->
         </select>
         </div>
         <div class="mt-2">
